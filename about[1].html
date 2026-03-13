@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Rreth projektit – Mikroklima</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🧭</div>
+      <div>
+        <h1>Rreth projektit</h1>
+        <p id="period" class="muted"></p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Harta</a>
+      <a href="charts.html">Grafikët</a>
+      <a class="active" href="about.html">Rreth projektit</a>
+    </nav>
+  </header>
+
+  <main class="about">
+    <div class="card">
+      <h2>Çfarë tregon kjo faqe?</h2>
+      <ul>
+        <li>Hartë interaktive me 4 pika turistike në Shkodër.</li>
+        <li>Grafikë të gjeneruar nga të dhënat e Excel-it (temperaturë, erë, rrezatim, komfort total).</li>
+        <li>Rekomandime “ora më e mirë” për vizitë sipas zonës (bazuar në indeksin e komfortit).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>Si llogaritet “Komforti total”?</h2>
+      <p>
+        Indeksi (0–100) është mesatarja e tre nën-score:
+        temperaturë, erë dhe rrezatim. Qëllimi është orientues (jo parashikim i motit).
+      </p>
+      <p class="muted">
+        Nëse dëshiron rregulla të tjera (p.sh. pragje fikse ose formula PMV), mund ta përshtasim.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Si të ndryshosh pikat në hartë?</h2>
+      <p>Hap <code>data/data.json</code> dhe ndrysho <code>zone_points</code> (lat/lng) për secilën zonë.</p>
+    </div>
+  </main>
+
+  <script>
+  (function(){
+    const d = window.MICROKLIMA_DATA;
+    if(!d || !d.meta) return;
+    const el = document.getElementById('period');
+    if(el) el.textContent = d.meta.period || '';
+  })();
+</script>
+</body>
+</html>
