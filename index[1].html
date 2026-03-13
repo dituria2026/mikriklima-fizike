@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Harta e Komfortit Turistik – Shkodër</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">☀</div>
+      <div>
+        <h1>Harta e Komfortit Turistik – Shkodër</h1>
+        <p id="period" class="muted"></p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a class="active" href="index.html">Harta</a>
+      <a href="charts.html">Grafikët</a>
+      <a href="about.html">Rreth projektit</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <h2>Filtra</h2>
+      <label class="field">
+        <span>Ora</span>
+        <select id="timeSelect"></select>
+      </label>
+
+      <div class="legend">
+        <h3>Legjenda e komfortit</h3>
+        <div class="legend-item"><span class="dot green"></span> Shumë komode</div>
+        <div class="legend-item"><span class="dot yellow"></span> Mesatare</div>
+        <div class="legend-item"><span class="dot red"></span> Pak komode</div>
+      </div>
+
+      <div class="card">
+        <h3>Rekomandim i shpejtë</h3>
+        <p class="muted">Kliko një pikë në hartë për të parë “orën më të mirë” dhe të dhënat mesatare.</p>
+      </div>
+
+      <div class="card">
+        <h3>Shënim</h3>
+        <p class="muted">Kjo faqe funksionon pa server: mjafton të hapni <b>index.html</b>.</p>
+      </div>
+    </section>
+
+    <section class="mapwrap">
+      <div id="map"></div>
+      <div class="map-footer">
+        <span class="muted">Pikat janë të vendosura afërsisht – ndryshohen te <code>data/config.json</code> (opsionale).</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data/data.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
