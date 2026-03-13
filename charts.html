@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="sq">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Grafikët – Mikroklima</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">📊</div>
+      <div>
+        <h1>Grafikët – Mikroklima</h1>
+        <p id="period" class="muted"></p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Harta</a>
+      <a class="active" href="charts.html">Grafikët</a>
+      <a href="about.html">Rreth projektit</a>
+    </nav>
+  </header>
+
+  <main class="charts">
+    <section class="chart-card">
+      <div class="chart-head">
+        <h2>Temperatura mesatare sipas orës</h2>
+        <p class="muted">Temperatura (°C) – mesatare e të gjitha zonave</p>
+      </div>
+      <canvas id="cTempTime"></canvas>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-head">
+        <h2>Temperatura mesatare sipas zonës</h2>
+        <p class="muted">Temperatura (°C) – mesatare e të gjitha orareve</p>
+      </div>
+      <canvas id="cTempZone"></canvas>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-head">
+        <h2>Era mesatare sipas zonës</h2>
+        <p class="muted">Shpejtësia e erës (m/s)</p>
+      </div>
+      <canvas id="cWindZone"></canvas>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-head">
+        <h2>Rrezatimi mesatar sipas zonës</h2>
+        <p class="muted">Rrezatimi (1–10)</p>
+      </div>
+      <canvas id="cRadZone"></canvas>
+    </section>
+
+    <section class="chart-card">
+      <div class="chart-head">
+        <h2>Komforti total</h2>
+        <p class="muted">Indeks (0–100) = mesatarja e 3 nën-score: temperaturë + erë + rrezatim</p>
+      </div>
+      <canvas id="cComfort"></canvas>
+    </section>
+  </main>
+
+  <script src="data/data.js"></script>
+  <script src="assets/charts.js"></script>
+</body>
+</html>
